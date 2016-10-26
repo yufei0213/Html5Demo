@@ -1,0 +1,317 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="line_w">1dp</dimen>
+    <dimen name="line_h">1dp</dimen>
+    <dimen name="font_size">@dimen/f16</dimen>
+    <dimen name="radius">10dp</dimen>
+
+    <!--title bar-->
+    <dimen name="title_bar_h">48dp</dimen>
+    <dimen name="title_bar_horizontal_pd">20dp</dimen>
+    <dimen name="title_bar_btn_t">16sp</dimen>
+    <dimen name="title_bar_title_t">16sp</dimen>
+
+    <!--menu bar-->
+    <dimen name="menu_bar_h">49dp</dimen>
+    <dimen name="menu_bar_line_h">@dimen/line_h</dimen>
+    <dimen name="menu_bar_content_h">48dp</dimen>
+    <dimen name="menu_bar_item_pdt">6dp</dimen>
+    <dimen name="menu_bar_item_t">12sp</dimen>
+
+    <!--alert-->
+    <dimen name="alert_w">300dp</dimen>
+    <dimen name="alert_line_w">260dp</dimen>
+    <dimen name="alert_line_h">@dimen/line_h</dimen>
+    <dimen name="alert_btn_radius">@dimen/radius</dimen>
+    <dimen name="alert_btn_h">40dp</dimen>
+    <dimen name="alert_btn_t">@dimen/font_size</dimen>
+
+    <!--toast-->
+    <dimen name="toast_radius">2dp</dimen>
+    <dimen name="toast_t">13sp</dimen>
+
+    <!--loading-->
+    <dimen name="loading_t">14sp</dimen>
+    <dimen name="loading_line">@dimen/line_w</dimen>
+    
+    <!--font-->
+    <dimen name="f1">1sp</dimen>
+    <dimen name="f2">2sp</dimen>
+    <dimen name="f3">3sp</dimen>
+    <dimen name="f4">4sp</dimen>
+    <dimen name="f5">5sp</dimen>
+    <dimen name="f6">6sp</dimen>
+    <dimen name="f7">7sp</dimen>
+    <dimen name="f8">8sp</dimen>
+    <dimen name="f9">9sp</dimen>
+    <dimen name="f10">10sp</dimen>
+    <dimen name="f11">11sp</dimen>
+    <dimen name="f12">12sp</dimen>
+    <dimen name="f13">13sp</dimen>
+    <dimen name="f14">14sp</dimen>
+    <dimen name="f15">15sp</dimen>
+    <dimen name="f16">16sp</dimen>
+    <dimen name="f17">17sp</dimen>
+    <dimen name="f18">18sp</dimen>
+    <dimen name="f19">19sp</dimen>
+    <dimen name="f20">20sp</dimen>
+
+    <!--width-->
+    <dimen name="w1">1dp</dimen>
+    <dimen name="w2">2dp</dimen>
+    <dimen name="w3">3dp</dimen>
+    <dimen name="w4">4dp</dimen>
+    <dimen name="w5">5dp</dimen>
+    <dimen name="w6">6dp</dimen>
+    <dimen name="w7">7dp</dimen>
+    <dimen name="w8">8dp</dimen>
+    <dimen name="w9">9dp</dimen>
+    <dimen name="w10">10dp</dimen>
+    <dimen name="w11">11dp</dimen>
+    <dimen name="w12">12dp</dimen>
+    <dimen name="w13">13dp</dimen>
+    <dimen name="w14">14dp</dimen>
+    <dimen name="w15">15dp</dimen>
+    <dimen name="w16">16dp</dimen>
+    <dimen name="w17">17dp</dimen>
+    <dimen name="w18">18dp</dimen>
+    <dimen name="w19">19dp</dimen>
+    <dimen name="w20">20dp</dimen>
+    
+    <!--height-->
+    <dimen name="h1">1dp</dimen>
+    <dimen name="h2">2dp</dimen>
+    <dimen name="h3">3dp</dimen>
+    <dimen name="h4">4dp</dimen>
+    <dimen name="h5">5dp</dimen>
+    <dimen name="h6">6dp</dimen>
+    <dimen name="h7">7dp</dimen>
+    <dimen name="h8">8dp</dimen>
+    <dimen name="h9">9dp</dimen>
+    <dimen name="h10">10dp</dimen>
+    <dimen name="h11">11dp</dimen>
+    <dimen name="h12">12dp</dimen>
+    <dimen name="h13">13dp</dimen>
+    <dimen name="h14">14dp</dimen>
+    <dimen name="h15">15dp</dimen>
+    <dimen name="h16">16dp</dimen>
+    <dimen name="h17">17dp</dimen>
+    <dimen name="h18">18dp</dimen>
+    <dimen name="h19">19dp</dimen>
+    <dimen name="h20">20dp</dimen>
+
+    <!--margin and padding-->
+    <dimen name="mg1">1dp</dimen>
+    <dimen name="mg2">2dp</dimen>
+    <dimen name="mg3">3dp</dimen>
+    <dimen name="mg4">4dp</dimen>
+    <dimen name="mg5">5dp</dimen>
+    <dimen name="mg6">6dp</dimen>
+    <dimen name="mg7">7dp</dimen>
+    <dimen name="mg8">8dp</dimen>
+    <dimen name="mg9">9dp</dimen>
+    <dimen name="mg10">10dp</dimen>
+    <dimen name="mg11">11dp</dimen>
+    <dimen name="mg12">12dp</dimen>
+    <dimen name="mg13">13dp</dimen>
+    <dimen name="mg14">14dp</dimen>
+    <dimen name="mg15">15dp</dimen>
+    <dimen name="mg16">16dp</dimen>
+    <dimen name="mg17">17dp</dimen>
+    <dimen name="mg18">18dp</dimen>
+    <dimen name="mg19">19dp</dimen>
+    <dimen name="mg20">20dp</dimen>
+
+    <dimen name="mgl1">1dp</dimen>
+    <dimen name="mgl2">2dp</dimen>
+    <dimen name="mgl3">3dp</dimen>
+    <dimen name="mgl4">4dp</dimen>
+    <dimen name="mgl5">5dp</dimen>
+    <dimen name="mgl6">6dp</dimen>
+    <dimen name="mgl7">7dp</dimen>
+    <dimen name="mgl8">8dp</dimen>
+    <dimen name="mgl9">9dp</dimen>
+    <dimen name="mgl10">10dp</dimen>
+    <dimen name="mgl11">11dp</dimen>
+    <dimen name="mgl12">12dp</dimen>
+    <dimen name="mgl13">13dp</dimen>
+    <dimen name="mgl14">14dp</dimen>
+    <dimen name="mgl15">15dp</dimen>
+    <dimen name="mgl16">16dp</dimen>
+    <dimen name="mgl17">17dp</dimen>
+    <dimen name="mgl18">18dp</dimen>
+    <dimen name="mgl19">19dp</dimen>
+    <dimen name="mgl20">20dp</dimen>
+
+    <dimen name="mgt1">1dp</dimen>
+    <dimen name="mgt2">2dp</dimen>
+    <dimen name="mgt3">3dp</dimen>
+    <dimen name="mgt4">4dp</dimen>
+    <dimen name="mgt5">5dp</dimen>
+    <dimen name="mgt6">6dp</dimen>
+    <dimen name="mgt7">7dp</dimen>
+    <dimen name="mgt8">8dp</dimen>
+    <dimen name="mgt9">9dp</dimen>
+    <dimen name="mgt10">10dp</dimen>
+    <dimen name="mgt11">11dp</dimen>
+    <dimen name="mgt12">12dp</dimen>
+    <dimen name="mgt13">13dp</dimen>
+    <dimen name="mgt14">14dp</dimen>
+    <dimen name="mgt15">15dp</dimen>
+    <dimen name="mgt16">16dp</dimen>
+    <dimen name="mgt17">17dp</dimen>
+    <dimen name="mgt18">18dp</dimen>
+    <dimen name="mgt19">19dp</dimen>
+    <dimen name="mgt20">20dp</dimen>
+
+    <dimen name="mgr1">1dp</dimen>
+    <dimen name="mgr2">2dp</dimen>
+    <dimen name="mgr3">3dp</dimen>
+    <dimen name="mgr4">4dp</dimen>
+    <dimen name="mgr5">5dp</dimen>
+    <dimen name="mgr6">6dp</dimen>
+    <dimen name="mgr7">7dp</dimen>
+    <dimen name="mgr8">8dp</dimen>
+    <dimen name="mgr9">9dp</dimen>
+    <dimen name="mgr10">10dp</dimen>
+    <dimen name="mgr11">11dp</dimen>
+    <dimen name="mgr12">12dp</dimen>
+    <dimen name="mgr13">13dp</dimen>
+    <dimen name="mgr14">14dp</dimen>
+    <dimen name="mgr15">15dp</dimen>
+    <dimen name="mgr16">16dp</dimen>
+    <dimen name="mgr17">17dp</dimen>
+    <dimen name="mgr18">18dp</dimen>
+    <dimen name="mgr19">19dp</dimen>
+    <dimen name="mgr20">20dp</dimen>
+
+    <dimen name="mgb1">1dp</dimen>
+    <dimen name="mgb2">2dp</dimen>
+    <dimen name="mgb3">3dp</dimen>
+    <dimen name="mgb4">4dp</dimen>
+    <dimen name="mgb5">5dp</dimen>
+    <dimen name="mgb6">6dp</dimen>
+    <dimen name="mgb7">7dp</dimen>
+    <dimen name="mgb8">8dp</dimen>
+    <dimen name="mgb9">9dp</dimen>
+    <dimen name="mgb10">10dp</dimen>
+    <dimen name="mgb11">11dp</dimen>
+    <dimen name="mgb12">12dp</dimen>
+    <dimen name="mgb13">13dp</dimen>
+    <dimen name="mgb14">14dp</dimen>
+    <dimen name="mgb15">15dp</dimen>
+    <dimen name="mgb16">16dp</dimen>
+    <dimen name="mgb17">17dp</dimen>
+    <dimen name="mgb18">18dp</dimen>
+    <dimen name="mgb19">19dp</dimen>
+    <dimen name="mgb20">20dp</dimen>
+
+    <dimen name="pd1">1dp</dimen>
+    <dimen name="pd2">2dp</dimen>
+    <dimen name="pd3">3dp</dimen>
+    <dimen name="pd4">4dp</dimen>
+    <dimen name="pd5">5dp</dimen>
+    <dimen name="pd6">6dp</dimen>
+    <dimen name="pd7">7dp</dimen>
+    <dimen name="pd8">8dp</dimen>
+    <dimen name="pd9">9dp</dimen>
+    <dimen name="pd10">10dp</dimen>
+    <dimen name="pd11">11dp</dimen>
+    <dimen name="pd12">12dp</dimen>
+    <dimen name="pd13">13dp</dimen>
+    <dimen name="pd14">14dp</dimen>
+    <dimen name="pd15">15dp</dimen>
+    <dimen name="pd16">16dp</dimen>
+    <dimen name="pd17">17dp</dimen>
+    <dimen name="pd18">18dp</dimen>
+    <dimen name="pd19">19dp</dimen>
+    <dimen name="pd20">20dp</dimen>
+
+    <dimen name="pdl1">1dp</dimen>
+    <dimen name="pdl2">2dp</dimen>
+    <dimen name="pdl3">3dp</dimen>
+    <dimen name="pdl4">4dp</dimen>
+    <dimen name="pdl5">5dp</dimen>
+    <dimen name="pdl6">6dp</dimen>
+    <dimen name="pdl7">7dp</dimen>
+    <dimen name="pdl8">8dp</dimen>
+    <dimen name="pdl9">9dp</dimen>
+    <dimen name="pdl10">10dp</dimen>
+    <dimen name="pdl11">11dp</dimen>
+    <dimen name="pdl12">12dp</dimen>
+    <dimen name="pdl13">13dp</dimen>
+    <dimen name="pdl14">14dp</dimen>
+    <dimen name="pdl15">15dp</dimen>
+    <dimen name="pdl16">16dp</dimen>
+    <dimen name="pdl17">17dp</dimen>
+    <dimen name="pdl18">18dp</dimen>
+    <dimen name="pdl19">19dp</dimen>
+    <dimen name="pdl20">20dp</dimen>
+
+    <dimen name="pdt1">1dp</dimen>
+    <dimen name="pdt2">2dp</dimen>
+    <dimen name="pdt3">3dp</dimen>
+    <dimen name="pdt4">4dp</dimen>
+    <dimen name="pdt5">5dp</dimen>
+    <dimen name="pdt6">6dp</dimen>
+    <dimen name="pdt7">7dp</dimen>
+    <dimen name="pdt8">8dp</dimen>
+    <dimen name="pdt9">9dp</dimen>
+    <dimen name="pdt10">10dp</dimen>
+    <dimen name="pdt11">11dp</dimen>
+    <dimen name="pdt12">12dp</dimen>
+    <dimen name="pdt13">13dp</dimen>
+    <dimen name="pdt14">14dp</dimen>
+    <dimen name="pdt15">15dp</dimen>
+    <dimen name="pdt16">16dp</dimen>
+    <dimen name="pdt17">17dp</dimen>
+    <dimen name="pdt18">18dp</dimen>
+    <dimen name="pdt19">19dp</dimen>
+    <dimen name="pdt20">20dp</dimen>
+
+    <dimen name="pdr1">1dp</dimen>
+    <dimen name="pdr2">2dp</dimen>
+    <dimen name="pdr3">3dp</dimen>
+    <dimen name="pdr4">4dp</dimen>
+    <dimen name="pdr5">5dp</dimen>
+    <dimen name="pdr6">6dp</dimen>
+    <dimen name="pdr7">7dp</dimen>
+    <dimen name="pdr8">8dp</dimen>
+    <dimen name="pdr9">9dp</dimen>
+    <dimen name="pdr10">10dp</dimen>
+    <dimen name="pdr11">11dp</dimen>
+    <dimen name="pdr12">12dp</dimen>
+    <dimen name="pdr13">13dp</dimen>
+    <dimen name="pdr14">14dp</dimen>
+    <dimen name="pdr15">15dp</dimen>
+    <dimen name="pdr16">16dp</dimen>
+    <dimen name="pdr17">17dp</dimen>
+    <dimen name="pdr18">18dp</dimen>
+    <dimen name="pdr19">19dp</dimen>
+    <dimen name="pdr20">20dp</dimen>
+
+    <dimen name="pdb1">1dp</dimen>
+    <dimen name="pdb2">2dp</dimen>
+    <dimen name="pdb3">3dp</dimen>
+    <dimen name="pdb4">4dp</dimen>
+    <dimen name="pdb5">5dp</dimen>
+    <dimen name="pdb6">6dp</dimen>
+    <dimen name="pdb7">7dp</dimen>
+    <dimen name="pdb8">8dp</dimen>
+    <dimen name="pdb9">9dp</dimen>
+    <dimen name="pdb10">10dp</dimen>
+    <dimen name="pdb11">11dp</dimen>
+    <dimen name="pdb12">12dp</dimen>
+    <dimen name="pdb13">13dp</dimen>
+    <dimen name="pdb14">14dp</dimen>
+    <dimen name="pdb15">15dp</dimen>
+    <dimen name="pdb16">16dp</dimen>
+    <dimen name="pdb17">17dp</dimen>
+    <dimen name="pdb18">18dp</dimen>
+    <dimen name="pdb19">19dp</dimen>
+    <dimen name="pdb20">20dp</dimen>
+
+</resources>

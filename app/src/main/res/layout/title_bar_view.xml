@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_bar_h"
+    android:background="@color/title_bar_bg">
+
+    <RelativeLayout
+        android:id="@+id/left_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:clickable="true"
+        android:gravity="center"
+        android:paddingLeft="@dimen/title_bar_horizontal_pd"
+        android:paddingRight="@dimen/title_bar_horizontal_pd">
+
+        <TextView
+            android:id="@+id/left_btn_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/title_bar_text"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="back" />
+
+        <ImageView
+            android:id="@+id/left_btn_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:src="@drawable/title_bar_left_btn" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/AudioFileInfoOverlayText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/title_bar_text"
+        android:textStyle="bold"
+        tools:text="Second Page" />
+
+    <RelativeLayout
+        android:id="@+id/right_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:gravity="center"
+        android:paddingLeft="@dimen/title_bar_horizontal_pd"
+        android:paddingRight="@dimen/title_bar_horizontal_pd"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/right_btn_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title_bar_text"
+            android:textStyle="bold"
+            tools:text="right" />
+
+        <ImageView
+            android:id="@+id/right_btn_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

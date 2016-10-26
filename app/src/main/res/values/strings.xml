@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">html5Demo</string>
+
+    <!--menu bar-->
+    <string name="menu_bar_item_search">Search</string>
+    <string name="menu_bar_item_ticket">Tickets</string>
+    <string name="menu_bar_item_cart">Cart</string>
+
+    <!--loading-->
+    <string name="loading">Loading</string>
+</resources>

@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/loading"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/loading_view_bg"
+        android:padding="@dimen/pd13">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/loading_view_icon" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mgl13"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/loading"
+            android:textColor="@color/loading_text"
+            android:textSize="@dimen/loading_t" />
+
+        <View
+            android:layout_width="@dimen/loading_line"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/mgl10"
+            android:background="@color/loading_line" />
+
+        <ImageView
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:padding="@dimen/pd5"
+            android:src="@drawable/loading_view_cancel_icon" />
+
+    </LinearLayout>
+
+</RelativeLayout>

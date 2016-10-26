@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MenuBarItemView">
+        <attr name="text" format="string" />
+        <attr name="normal" format="reference|color" />
+        <attr name="selected" format="reference|color" />
+        <attr name="isSelected" format="boolean" />
+    </declare-styleable>
+
+</resources>

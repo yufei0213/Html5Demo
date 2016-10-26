@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ubt="http://schemas.android.com/apk/res-auto"
+    style="@style/MenuBarViewStyle"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/menu_bar_h"
+    android:background="@color/menu_bar_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/menu_bar_line_h"
+        android:background="@color/menu_bar_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/menu_bar_content_h"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/menu_bar_item_pdt">
+
+        <io.ubt.app.view.component.MenuBarItemView
+            android:id="@+id/firstItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:tag="1"
+            ubt:normal="@drawable/menu_bar_item_home_normal"
+            ubt:selected="@drawable/menu_bar_item_home_pressed"
+            ubt:isSelected="true"
+            ubt:text="@string/menu_bar_item_search" />
+
+        <io.ubt.app.view.component.MenuBarItemView
+            android:id="@+id/secondItm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:tag="2"
+            ubt:normal="@drawable/menu_bar_item_cart_normal"
+            ubt:selected="@drawable/menu_bar_item_cart_pressed"
+            ubt:isSelected="false"
+            ubt:text="@string/menu_bar_item_cart" />
+
+        <io.ubt.app.view.component.MenuBarItemView
+            android:id="@+id/thirdItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:tag="3"
+            ubt:normal="@drawable/menu_bar_item_tickets_normal"
+            ubt:selected="@drawable/menu_bar_item_tickets_pressed"
+            ubt:isSelected="false"
+            ubt:text="@string/menu_bar_item_ticket" />
+
+    </LinearLayout>
+
+</LinearLayout>
