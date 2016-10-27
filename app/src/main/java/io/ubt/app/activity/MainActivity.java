@@ -1,5 +1,7 @@
 package io.ubt.app.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.RelativeLayout;
@@ -36,6 +38,11 @@ public class MainActivity extends BaseActivity {
         initTitleBar();
         //初始化底部菜单栏
         initMenuBar();
+    }
+
+    public static Intent createIntent(Context context) {
+
+        return new Intent(context, MainActivity.class);
     }
 
     private void initTitleBar() {

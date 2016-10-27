@@ -8,4 +8,15 @@
 
     <!--loading-->
     <string name="loading">Loading</string>
+
+    <!--alert btn-->
+    <string name="OK">OK</string>
+    <string name="ok">Ok</string>
+    <string name="Cancel">Cancel</string>
+
+    <!--login-->
+    <string name="username_null">Please Enter Username</string>
+    <string name="username_validate">Please Enter Validated Username</string>
+    <string name="password_null">Please Enter Password</string>
+
 </resources>

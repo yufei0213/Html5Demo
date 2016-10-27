@@ -78,37 +78,46 @@ public class BaseActivity extends FragmentActivity {
 
     protected void showAlert(String msg) {
 
+        if (isFinishing())
+            return;
+
         final AlertView alertView = new AlertView(this);
 
         alertView.setMessage(msg);
-        alertView.setPositiveButton("OK", new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        alertView.setPositiveButton(getResources().getString(R.string.OK),
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
-                alertView.dismiss();
-            }
-        });
+                        alertView.dismiss();
+                    }
+                });
     }
 
     protected void showConfirm(String msg) {
 
+        if (isFinishing())
+            return;
+
         final AlertView alertView = new AlertView(this);
 
         alertView.setMessage(msg);
-        alertView.setRightButton("Cancel", new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        alertView.setLeftButton(getResources().getString(R.string.Cancel),
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
-                alertView.dismiss();
-            }
-        });
-        alertView.setLeftButton("Ok", new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                        alertView.dismiss();
+                    }
+                });
+        alertView.setRightButton(getResources().getString(R.string.OK),
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
-                alertView.dismiss();
-            }
-        });
+                        alertView.dismiss();
+                    }
+                });
     }
 
     protected void setStatusBar() {

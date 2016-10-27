@@ -12,6 +12,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
+import android.view.inputmethod.InputMethodManager;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
