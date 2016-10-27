@@ -12,10 +12,16 @@ public class User {
     private int id;
     private String name;
 
+    private String accessToken;
+
+    public User() {
+    }
+
     public User(JSONObject object) {
 
         this.id = object.optInt("id");
         this.name = object.optString("name");
+        this.accessToken = object.optString("accessToken");
     }
 
     public int getId() {
@@ -34,6 +40,14 @@ public class User {
         this.name = name;
     }
 
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
     @Override
     public String toString() {
 
@@ -42,6 +56,7 @@ public class User {
 
             json.put("id", id);
             json.put("name", name);
+            json.put("accessToken", accessToken);
         } catch (JSONException e) {
 
             e.printStackTrace();

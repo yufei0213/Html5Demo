@@ -1,23 +1,24 @@
 package io.ubt.app.model;
 
 /**
- * Created by wangyufei on 16/10/20.
+ * Created by wangyufei on 16/10/27.
  */
 
-public enum DataStorageType {
+public enum DataType {
 
-    USERNAME(0, "username"),
-    PASSWORD(1, "password"),
-    ACCESSTOKEN(2, "accessToken");
-
-    DataStorageType(int id, String type) {
-
-        this.id = id;
-        this.type = type;
-    }
+    USERID(0, "userId"),
+    USERNAME(1, "username"),
+    PASSWORD(2, "password"),
+    ACCESSTOKEN(3, "accessToken"),
+    SERVICE_DATE(4, "service_date");
 
     private int id;
     private String type;
+
+    DataType(int id, String type) {
+        this.id = id;
+        this.type = type;
+    }
 
     public int getId() {
         return id;

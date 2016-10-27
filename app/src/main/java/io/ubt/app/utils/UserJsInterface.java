@@ -3,6 +3,8 @@ package io.ubt.app.utils;
 import android.content.Context;
 import android.webkit.JavascriptInterface;
 
+import io.ubt.app.model.DataType;
+
 /**
  * Created by wangyufei on 16/10/20.
  */
@@ -19,13 +21,38 @@ public class UserJsInterface {
     }
 
     @JavascriptInterface
-    public void login(String username, String password, String jsCallBack) {
+    public void login(String username, String password, final String successCallBack, final String failureCallBack) {
 
+        UserHelper.login(username, password, new UserHelper.LoginSuccess() {
+            @Override
+            public void execute() {
+
+                if (successCallBack != null)
+                    webViewPage.loadUrl("javascript:" + successCallBack + "();");
+            }
+        }, new UserHelper.LoginFailure() {
+            @Override
+            public void execute(int code, String msg) {
+
+                if (failureCallBack != null)
+                    webViewPage.loadUrl("javascript:" + failureCallBack + "(" + code + ", " + msg + ");");
+            }
+        });
+    }
+
+    @JavascriptInterface
+    public void autoLogin(final String successCallBack, final String failureCallBack) {
+
+        String username = DataStorage.getInstance().getString(DataType.USERNAME.getType());
+        String password = DataStorage.getInstance().getString(DataType.PASSWORD.getType());
+
+        login(username, password, successCallBack, failureCallBack);
     }
 
     @JavascriptInterface
     public void logout() {
 
+        UserHelper.clearUser();
     }
 
     @JavascriptInterface
@@ -34,7 +61,8 @@ public class UserJsInterface {
     }
 
     @JavascriptInterface
-    public void getUser() {
+    public String getUser() {
 
+        return UserHelper.getUser().toString();
     }
 }

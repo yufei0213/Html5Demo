@@ -39,7 +39,6 @@ public class SDKJsInterface {
     @JavascriptInterface
     public void Toast(String msg) {
 
-//        ToastView.makeText(context, msg, Toast.LENGTH_LONG).show();
         ToastView.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
