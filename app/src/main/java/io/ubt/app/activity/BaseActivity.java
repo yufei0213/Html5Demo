@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import io.ubt.app.R;
+import io.ubt.app.utils.ActivityCollector;
 import io.ubt.app.utils.StatusBarHelper;
 import io.ubt.app.view.component.AlertView;
 import io.ubt.app.view.component.LoadingView;
@@ -30,6 +31,7 @@ public class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         doAnimate();
+        ActivityCollector.addActivity(this);
     }
 
     @Override
@@ -39,6 +41,14 @@ public class BaseActivity extends FragmentActivity {
 
         this.animation(animOutIndex == 0 ? animOutIndex : animOutIndex - 1,
                 animInIndex == 0 ? animInIndex : animInIndex + 1);
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        super.onDestroy();
+
+        ActivityCollector.removeActivity(this);
     }
 
     protected void showLoading() {
