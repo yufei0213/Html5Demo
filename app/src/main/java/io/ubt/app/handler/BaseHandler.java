@@ -28,6 +28,7 @@ import io.ubt.app.utils.UserHelper;
  * }
  */
 
+// TODO: 16/10/30 重抽 BaseHandler
 public abstract class BaseHandler<T> {
 
     protected boolean isInterrupted = false; //请求是否被中断

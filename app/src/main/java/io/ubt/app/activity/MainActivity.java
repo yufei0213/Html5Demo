@@ -4,11 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 import io.ubt.app.R;
+import io.ubt.app.view.page.BaseWebViewPage;
 import io.ubt.app.utils.Constants;
-import io.ubt.app.utils.WebViewPage;
 import io.ubt.app.view.component.MenuBarView;
 import io.ubt.app.view.component.TitleBarView;
 
@@ -18,13 +19,16 @@ import io.ubt.app.view.component.TitleBarView;
 
 public class MainActivity extends BaseActivity {
 
+    private View statusBarView; //状态栏视图，需要根据不同的页面展示不同的背景色，根据项目进行定制
     private TitleBarView titleBarView; //默认不显示，此框架中不实现标题栏，根据项目进行定制
 
-    private WebViewPage firstPage;
-    private WebViewPage secondPage;
-    private WebViewPage thirdPage;
+    //本demo中只展示三个子页面，根据项目进行定制
+    //有title bar的页面需要声明为WebViewPage类型
+    private BaseWebViewPage firstPage;
+    private BaseWebViewPage secondPage;
+    private BaseWebViewPage thirdPage;
 
-    private WebViewPage activePage;
+    private BaseWebViewPage activePage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,24 +37,35 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.main_activity);
 
         //设置状态栏样式
-        setStatusBar();
-        //初始化标题栏
+        statusBarView = setStatusBar();
+
         initTitleBar();
-        //初始化底部菜单栏
         initMenuBar();
     }
 
+    /**
+     * 创建启动该activity的intent
+     *
+     * @param context
+     * @return
+     */
     public static Intent createIntent(Context context) {
 
         return new Intent(context, MainActivity.class);
     }
 
+    /**
+     * 初始化title bar
+     */
     private void initTitleBar() {
 
         titleBarView = (TitleBarView) this.findViewById(R.id.title_bar);
         titleBarView.setOnBtnClickListener(onTitleBarBtnClickListener);
     }
 
+    /**
+     * 初始化menu bar
+     */
     private void initMenuBar() {
 
         MenuBarView menuBarView = (MenuBarView) this.findViewById(R.id.menu_bar);
@@ -59,9 +74,15 @@ public class MainActivity extends BaseActivity {
         menuBarView.clickFistItem(); //默认选中第一个
     }
 
-    private WebViewPage createWebView(String url) {
+    /**
+     * 创建web view
+     *
+     * @param url
+     * @return
+     */
+    private BaseWebViewPage createWebView(String url) {
 
-        WebViewPage webViewPage = new WebViewPage(this, null);
+        BaseWebViewPage webViewPage = new BaseWebViewPage(this, null);
         webViewPage.loadUrl(url);
 
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -70,6 +91,9 @@ public class MainActivity extends BaseActivity {
         return webViewPage;
     }
 
+    /**
+     * 显示first page
+     */
     private void showFirstPage() {
 
         if (firstPage == null)
@@ -77,10 +101,15 @@ public class MainActivity extends BaseActivity {
         else
             firstPage.onReload();
 
+        statusBarView.setBackgroundColor(getResources().getColor(R.color.first_page_statusbar));
+
         activePage = firstPage;
         activePage.show();
     }
 
+    /**
+     * 显示second page
+     */
     private void showSecondPage() {
 
         if (secondPage == null)
@@ -88,10 +117,15 @@ public class MainActivity extends BaseActivity {
         else
             secondPage.onReload();
 
+        statusBarView.setBackgroundColor(getResources().getColor(R.color.second_page_statusbar));
+
         activePage = secondPage;
         activePage.show();
     }
 
+    /**
+     * 显示third page
+     */
     private void showThirdPage() {
 
         if (thirdPage == null)
@@ -99,24 +133,34 @@ public class MainActivity extends BaseActivity {
         else
             thirdPage.onReload();
 
+        statusBarView.setBackgroundColor(getResources().getColor(R.color.third_page_statusbar));
+
         activePage = thirdPage;
         activePage.show();
     }
 
+    /**
+     * title bar监听
+     */
     private TitleBarView.OnBtnClickListener onTitleBarBtnClickListener = new TitleBarView.OnBtnClickListener() {
         @Override
         public void leftBtnClick() {
 
-            // TODO: 16/10/24  
+            if (activePage instanceof TitleBarView.OnBtnClickListener)
+                activePage.loadUrl("javascript:Global.onLeftBtnClick();");
         }
 
         @Override
         public void rightBtnCLick() {
 
-            // TODO: 16/10/24  
+            if (activePage instanceof TitleBarView.OnBtnClickListener)
+                activePage.loadUrl("javascript:Global.onRightBtnClick();");
         }
     };
 
+    /**
+     * menu bar监听
+     */
     private MenuBarView.OnItemClickListener onMenuBarItemClickListener = new MenuBarView.OnItemClickListener() {
         @Override
         public void onMenuItemClick(int flag) {

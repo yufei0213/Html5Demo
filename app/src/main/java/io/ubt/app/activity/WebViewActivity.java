@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 
 import io.ubt.app.R;
 import io.ubt.app.model.WebViewParams;
-import io.ubt.app.utils.WebViewPage;
+import io.ubt.app.view.page.WebViewPage;
 import io.ubt.app.view.component.TitleBarView;
 
 /**
@@ -87,19 +87,22 @@ public class WebViewActivity extends BaseActivity {
         titleBarView.setOnBtnClickListener(webViewPage);
 
         //设置左侧按钮
-        if (params.getLeftBtnType() == TitleBarView.BtnType.LEFT_NO_BTN.getId()) {
-
-            titleBarView.hideLeftBtn();
-        } else {
-
-            titleBarView.showLeftBtn();
-            if (params.getLeftBtnType() == TitleBarView.BtnType.LEFT_TEXT_BTN.getId())
-                titleBarView.setLeftBtn(params.getLeftBtnText());
-            if (params.getLeftBtnType() == TitleBarView.BtnType.LEFT_IMG_BTN.getId())
-                titleBarView.setLeftBtn(R.drawable.title_bar_left_btn);
-        }
+        setLeftButton(params);
 
         //设置右侧按钮
+        setRightButton(params);
+
+        //设置标题
+        if (params.getTitle() != null && !params.getTitle().isEmpty())
+            titleBarView.setTitle(params.getTitle());
+    }
+
+    /**
+     * 设置右侧按钮
+     * @param params
+     */
+    private void setRightButton(WebViewParams.Params params) {
+
         if (params.getRightBtnType() == TitleBarView.BtnType.RIGHT_NO_BTN.getId()) {
 
             titleBarView.hideRightBtn();
@@ -111,9 +114,24 @@ public class WebViewActivity extends BaseActivity {
             if (params.getRightBtnType() == TitleBarView.BtnType.RIGHT_IMG_BTN.getId())
                 titleBarView.setRightBtn(R.drawable.title_bar_right_btn);
         }
+    }
 
-        //设置标题
-        if (params.getTitle() != null && !params.getTitle().isEmpty())
-            titleBarView.setTitle(params.getTitle());
+    /**
+     * 设置左侧按钮
+     * @param params
+     */
+    private void setLeftButton(WebViewParams.Params params) {
+
+        if (params.getLeftBtnType() == TitleBarView.BtnType.LEFT_NO_BTN.getId()) {
+
+            titleBarView.hideLeftBtn();
+        } else {
+
+            titleBarView.showLeftBtn();
+            if (params.getLeftBtnType() == TitleBarView.BtnType.LEFT_TEXT_BTN.getId())
+                titleBarView.setLeftBtn(params.getLeftBtnText());
+            if (params.getLeftBtnType() == TitleBarView.BtnType.LEFT_IMG_BTN.getId())
+                titleBarView.setLeftBtn(R.drawable.title_bar_left_btn);
+        }
     }
 }

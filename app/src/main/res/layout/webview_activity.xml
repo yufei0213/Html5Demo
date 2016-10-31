@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <io.ubt.app.utils.WebViewPage
+        <io.ubt.app.view.page.WebViewPage
             android:id="@+id/webview_page"
             android:layout_width="match_parent"
             android:layout_height="0dp"

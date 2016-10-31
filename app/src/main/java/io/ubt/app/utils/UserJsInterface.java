@@ -4,6 +4,7 @@ import android.content.Context;
 import android.webkit.JavascriptInterface;
 
 import io.ubt.app.model.DataType;
+import io.ubt.app.view.page.BaseWebViewPage;
 
 /**
  * Created by wangyufei on 16/10/20.
@@ -12,9 +13,9 @@ import io.ubt.app.model.DataType;
 public class UserJsInterface {
 
     private Context context;
-    private WebViewPage webViewPage;
+    private BaseWebViewPage webViewPage;
 
-    public UserJsInterface(Context context, WebViewPage webViewPage) {
+    public UserJsInterface(Context context, BaseWebViewPage webViewPage) {
 
         this.context = context;
         this.webViewPage = webViewPage;

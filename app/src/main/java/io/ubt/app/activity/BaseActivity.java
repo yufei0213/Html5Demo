@@ -120,31 +120,42 @@ public class BaseActivity extends FragmentActivity {
                 });
     }
 
-    protected void setStatusBar() {
+    protected View setStatusBar() {
 
         if (StatusBarHelper.canTransparent()) {
 
             StatusBarHelper.setTranslationStatusBar(this);
-            StatusBarHelper.translationY(this, (ViewGroup) this.findViewById(R.id.content));
+            return StatusBarHelper.translationY(this,
+                    (ViewGroup) this.findViewById(R.id.content));
         }
+
+        return null;
     }
 
-    protected void setStatusBar(int colorId) {
+    protected View setStatusBar(int colorId) {
 
         if (StatusBarHelper.canTransparent()) {
 
             StatusBarHelper.setTranslationStatusBar(this);
-            StatusBarHelper.translationY(this, (ViewGroup) this.findViewById(R.id.content), getResources().getColor(colorId));
+            return StatusBarHelper.translationY(this,
+                    (ViewGroup) this.findViewById(R.id.content),
+                    getResources().getColor(colorId));
         }
+
+        return null;
     }
 
-    protected void setStatusBar(int viewId, int colorId) {
+    protected View setStatusBar(int viewId, int colorId) {
 
         if (StatusBarHelper.canTransparent()) {
 
             StatusBarHelper.setTranslationStatusBar(this);
-            StatusBarHelper.translationY(this, (ViewGroup) this.findViewById(viewId), getResources().getColor(colorId));
+            return StatusBarHelper.translationY(this,
+                    (ViewGroup) this.findViewById(viewId),
+                    getResources().getColor(colorId));
         }
+
+        return null;
     }
 
     protected void doAnimate() {

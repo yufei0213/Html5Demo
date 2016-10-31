@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 import io.ubt.app.view.component.AlertView;
 import io.ubt.app.view.component.LoadingView;
-import io.ubt.app.view.component.TitleBarView;
 import io.ubt.app.view.component.ToastView;
+import io.ubt.app.view.page.BaseWebViewPage;
 
 /**
  * Created by wangyufei on 16/10/19.
@@ -22,9 +22,9 @@ import io.ubt.app.view.component.ToastView;
 public class SDKJsInterface {
 
     private Context context;
-    private WebViewPage webViewPage;
+    private BaseWebViewPage webViewPage;
 
-    public SDKJsInterface(Context context, WebViewPage webViewPage) {
+    public SDKJsInterface(Context context, BaseWebViewPage webViewPage) {
 
         this.context = context;
         this.webViewPage = webViewPage;

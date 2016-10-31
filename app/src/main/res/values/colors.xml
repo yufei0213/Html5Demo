@@ -11,6 +11,10 @@
     <color name="statusbar_bg">#69807e7e</color>
     <color name="line">#dddddd</color>
 
+    <color name="first_page_statusbar">#69807e7e</color>
+    <color name="second_page_statusbar">#69807e7e</color>
+    <color name="third_page_statusbar">#69807e7e</color>
+
     <!--title bar-->
     <color name="title_bar_bg">#1f95f2</color>
     <color name="title_bar_text">@color/white</color>

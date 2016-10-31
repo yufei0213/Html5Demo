@@ -1,4 +1,4 @@
-package io.ubt.app.utils;
+package io.ubt.app.view.page;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,21 +17,22 @@ import java.lang.reflect.Method;
 
 import io.ubt.app.activity.WebViewActivity;
 import io.ubt.app.model.WebViewParams;
-import io.ubt.app.view.component.TitleBarView;
+import io.ubt.app.utils.Constants;
+import io.ubt.app.utils.SDKJsInterface;
+import io.ubt.app.utils.UserJsInterface;
 
 /**
- * Created by wangyufei on 16/10/19.
+ * Created by yufei0213 on 16/10/31.
  */
+public class BaseWebViewPage extends WebView {
 
-public class WebViewPage extends WebView implements TitleBarView.OnBtnClickListener {
+    protected Context context;
 
-    private Context context;
-
-    public WebViewPage(Context context, AttributeSet attrs) {
+    public BaseWebViewPage(Context context, AttributeSet attrs) {
 
         super(context, attrs);
-
         this.context = context;
+
         initWebViewParams();
 
         this.addJavascriptInterface(this, "page");
@@ -54,18 +55,6 @@ public class WebViewPage extends WebView implements TitleBarView.OnBtnClickListe
         this.loadUrl("javascript:Global.onReload();");
     }
 
-    @Override
-    public void leftBtnClick() {
-
-        this.loadUrl("javascript:Global.onLeftBtnClick();");
-    }
-
-    @Override
-    public void rightBtnCLick() {
-
-        this.loadUrl("javascript:Global.onRightBtnClick();");
-    }
-
     @JavascriptInterface
     public void openPage(String url, String params) {
 
@@ -75,7 +64,7 @@ public class WebViewPage extends WebView implements TitleBarView.OnBtnClickListe
         context.startActivity(intent);
     }
 
-    private void initWebViewParams() {
+    protected void initWebViewParams() {
 
         getSettings().setTextZoom(100);
         getSettings().setJavaScriptEnabled(true);
@@ -115,7 +104,7 @@ public class WebViewPage extends WebView implements TitleBarView.OnBtnClickListe
             WebViewParams webViewParams = (WebViewParams) ((Activity) context).getIntent()
                     .getSerializableExtra(WebViewActivity.EXTRA_PARAMS);
 
-            if (webViewParams != null) {
+            if (webViewParams != null) { //通过PAGE.openPage(String url, String params)打开页面
 
                 WebViewParams.Params params = webViewParams.getParams();
 
@@ -124,13 +113,13 @@ public class WebViewPage extends WebView implements TitleBarView.OnBtnClickListe
                     String param = params.getParam();
 
                     if (param != null && !param.isEmpty())
-                        WebViewPage.this.loadUrl("javascript:Global.init('" + param + "');");
+                        BaseWebViewPage.this.loadUrl("javascript:Global.init('" + param + "');");
                     else
-                        WebViewPage.this.loadUrl("javascript:Global.init();");
+                        BaseWebViewPage.this.loadUrl("javascript:Global.init();");
                 }
-            } else {
+            } else { //通过XML定义页面
 
-                WebViewPage.this.loadUrl("javascript:Global.init();");
+                BaseWebViewPage.this.loadUrl("javascript:Global.init();");
             }
         }
     };

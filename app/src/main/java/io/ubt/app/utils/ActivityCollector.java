@@ -52,22 +52,17 @@ public class ActivityCollector {
      *
      * @param activityClass
      */
-    public static void finshActivity(Class<?> activityClass) {
-
-        Activity finished = null;
+    public static void finishActivity(Class<?> activityClass) {
 
         for (Activity activity : activities) {
 
-            if(activityClass.equals(activity.getClass())) {
+            if (activityClass.equals(activity.getClass())) {
 
                 activity.finish();
-                finished = activity;
+                removeActivity(activity);
                 break;
             }
         }
-
-        if(finished != null)
-            removeActivity(finished);
     }
 
     /**
@@ -79,9 +74,9 @@ public class ActivityCollector {
 
         List<Activity> delActivities = new ArrayList<Activity>();
 
-        for(Activity activity : activities) {
+        for (Activity activity : activities) {
 
-            if(!activityClass.equals(activity.getClass())) {
+            if (!activityClass.equals(activity.getClass())) {
 
                 activity.finish();
                 delActivities.add(activity);
@@ -98,7 +93,7 @@ public class ActivityCollector {
 
         for (Activity activity : activities) {
 
-            if(!activity.isFinishing())
+            if (!activity.isFinishing())
                 activity.finish();
         }
 

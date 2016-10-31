@@ -3,9 +3,9 @@ package io.ubt.app.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.TextView;
 
 import io.ubt.app.R;
 
@@ -30,23 +30,27 @@ public class StatusBarHelper {
         return release >= 19;
     }
 
-    public static void translationY(Context context, ViewGroup view) {
+    public static View translationY(Context context, ViewGroup view) {
 
         int height = AppUtil.getStatusBarHeight(context);
         ViewGroup.LayoutParams param = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
 
-        TextView block = new TextView(context);
+        View block = new View(context);
         block.setBackgroundColor(context.getResources().getColor(R.color.statusbar_bg));
         view.addView(block, 0, param);
+
+        return block;
     }
 
-    public static void translationY(Context context, ViewGroup view, int color) {
+    public static View translationY(Context context, ViewGroup view, int color) {
 
         int height = AppUtil.getStatusBarHeight(context);
         ViewGroup.LayoutParams param = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
 
-        TextView block = new TextView(context);
+        View block = new View(context);
         block.setBackgroundColor(color);
         view.addView(block, 0, param);
+
+        return block;
     }
 }
