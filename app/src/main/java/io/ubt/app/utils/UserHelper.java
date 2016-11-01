@@ -5,6 +5,7 @@ import java.util.Map;
 
 import io.ubt.app.handler.HandlerListener;
 import io.ubt.app.handler.LoginHandler;
+import io.ubt.app.handler.LogoutHandler;
 import io.ubt.app.model.DataType;
 import io.ubt.app.model.User;
 
@@ -28,7 +29,7 @@ public class UserHelper {
             @Override
             public void onSuccess(User user) {
 
-                afterLoginSuccess(username, password, user);
+                afterLoginSuccess(password, user);
 
                 loginSuccess.execute();
             }
@@ -61,13 +62,36 @@ public class UserHelper {
     }
 
     /**
+     * 退出登陆
+     */
+    public static void logout() {
+
+        LogoutHandler handler = new LogoutHandler(new HandlerListener<String>() {
+            @Override
+            public void onSuccess(String result) {
+
+            }
+
+            @Override
+            public void onFailure(int code, String msg) {
+
+            }
+        });
+
+        Map<String, Object> params = new HashMap<>();
+        handler.execute(params);
+
+        //logout执行后无论是否成功都要清空user信息
+        clearUser();
+    }
+
+    /**
      * 登录成功后保存用户信息
      *
-     * @param username
      * @param password
      * @param user
      */
-    public static void afterLoginSuccess(String username, String password, User user) {
+    public static void afterLoginSuccess(String password, User user) {
 
         DataStorage.getInstance().putString(DataType.PASSWORD.getType(), password);
 

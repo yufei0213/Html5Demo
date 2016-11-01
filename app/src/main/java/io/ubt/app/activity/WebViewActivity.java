@@ -35,7 +35,6 @@ public class WebViewActivity extends BaseActivity {
     protected void onResume() {
 
         super.onResume();
-
         webViewPage.onReload();
     }
 
@@ -99,6 +98,7 @@ public class WebViewActivity extends BaseActivity {
 
     /**
      * 设置右侧按钮
+     *
      * @param params
      */
     private void setRightButton(WebViewParams.Params params) {
@@ -118,6 +118,7 @@ public class WebViewActivity extends BaseActivity {
 
     /**
      * 设置左侧按钮
+     *
      * @param params
      */
     private void setLeftButton(WebViewParams.Params params) {

@@ -15,8 +15,10 @@ import android.webkit.WebViewClient;
 
 import java.lang.reflect.Method;
 
+import io.ubt.app.activity.LoginActivity;
 import io.ubt.app.activity.WebViewActivity;
 import io.ubt.app.model.WebViewParams;
+import io.ubt.app.utils.ActivityCollector;
 import io.ubt.app.utils.Constants;
 import io.ubt.app.utils.SDKJsInterface;
 import io.ubt.app.utils.UserJsInterface;
@@ -56,12 +58,27 @@ public class BaseWebViewPage extends WebView {
     }
 
     @JavascriptInterface
+    public void openLoginPage() {
+
+        Intent intent = LoginActivity.createIntent(context);
+        context.startActivity(intent);
+
+        ActivityCollector.finishOthers(LoginActivity.class);
+    }
+
+    @JavascriptInterface
     public void openPage(String url, String params) {
 
         String tmpUrl = Constants.STATIC_FILE_ROOT + "page/" + url;
         Intent intent = WebViewActivity.createIntent(context, new WebViewParams(tmpUrl, params));
 
         context.startActivity(intent);
+    }
+
+    @JavascriptInterface
+    public void back() {
+
+        ((Activity) context).finish();
     }
 
     protected void initWebViewParams() {

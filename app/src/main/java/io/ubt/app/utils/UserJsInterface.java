@@ -53,7 +53,7 @@ public class UserJsInterface {
     @JavascriptInterface
     public void logout() {
 
-        UserHelper.clearUser();
+        UserHelper.logout();
     }
 
     @JavascriptInterface
