@@ -176,4 +176,9 @@ public class SDKJsInterface {
             }
         });
     }
+
+    @JavascriptInterface
+    public void showDateSelector(String dateStr, String title, String jsCallBack) {
+
+    }
 }
