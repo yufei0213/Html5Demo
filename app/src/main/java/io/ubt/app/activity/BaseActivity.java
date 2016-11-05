@@ -27,8 +27,8 @@ public class BaseActivity extends AppCompatActivity {
     protected static final String EXTRA_ANIM_IN = "io.ubt.app.activity.BaseActivity.anim_in";
     protected static final String EXTRA_ANIM_OUT = "io.ubt.app.activity.BaseActivity.anim_in";
 
-    protected int PERMISSION_REQUEST_CODE;
-    protected String PERMISSION_MSG;
+    private int PERMISSION_REQUEST_CODE;
+    private String PERMISSION_MSG;
 
     private int animInIndex;
     private int animOutIndex;
