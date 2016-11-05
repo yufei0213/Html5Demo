@@ -13,6 +13,7 @@
     <string name="OK">OK</string>
     <string name="ok">Ok</string>
     <string name="Cancel">Cancel</string>
+    <string name="delete">Delete</string>
 
     <!--login-->
     <string name="username_null">Please Enter Username</string>

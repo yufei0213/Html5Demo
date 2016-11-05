@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
+import io.ubt.app.R;
 import io.ubt.app.view.component.AlertView;
 import io.ubt.app.view.component.LoadingView;
 import io.ubt.app.view.component.ToastView;
@@ -33,7 +34,7 @@ public class SDKJsInterface {
     @JavascriptInterface
     public void log(String tag, String msg) {
 
-        Log.i(tag, msg);
+        Log.d(tag, msg);
     }
 
     @JavascriptInterface
@@ -105,12 +106,9 @@ public class SDKJsInterface {
 
         final AlertView alertView = new AlertView(context);
         alertView.setMessage(msg);
-
-        alertView.setPositiveButton("OK", new View.OnClickListener() {
+        alertView.setPositiveButton(context.getResources().getString(R.string.OK), new AlertView.OnPositiveButtonClickListener() {
             @Override
-            public void onClick(View v) {
-
-                alertView.dismiss();
+            public void onPositiveButtonClick(View view) {
 
                 if (jsCallBack != null && !jsCallBack.isEmpty()) {
 
@@ -137,12 +135,9 @@ public class SDKJsInterface {
 
         final AlertView alertView = new AlertView(context);
         alertView.setMessage(msg);
-
-        alertView.setRightButton("Cancel", new View.OnClickListener() {
+        alertView.setLeftButton(context.getResources().getString(R.string.Cancel), new AlertView.OnLeftButtonClickListener() {
             @Override
-            public void onClick(View v) {
-
-                alertView.dismiss();
+            public void onLeftButtonClick(View view) {
 
                 if (cancelBtnListener != null && !cancelBtnListener.isEmpty()) {
 
@@ -156,12 +151,9 @@ public class SDKJsInterface {
                 }
             }
         });
-
-        alertView.setLeftButton("Ok", new View.OnClickListener() {
+        alertView.setRightButton(context.getResources().getString(R.string.OK), new AlertView.OnRightButtonClickListener() {
             @Override
-            public void onClick(View v) {
-
-                alertView.dismiss();
+            public void onRightButtonClick(View view) {
 
                 if (okBtnListener != null && !okBtnListener.isEmpty()) {
 
@@ -175,10 +167,5 @@ public class SDKJsInterface {
                 }
             }
         });
-    }
-
-    @JavascriptInterface
-    public void showDateSelector(String dateStr, String title, String jsCallBack) {
-
     }
 }
